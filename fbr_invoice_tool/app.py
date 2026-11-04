@@ -19,11 +19,11 @@ st.markdown("""
     .hero p  { opacity: 0.85; font-size: 1.1rem; margin: 0.6rem 0 0; }
     .tool-card {
         background: white; border: 2px solid #e8f5ee; border-radius: 14px;
-        padding: 2rem; text-align: center; cursor: pointer;
+        padding: 2rem; text-align: center;
         transition: all 0.2s; height: 100%;
     }
     .tool-card:hover { border-color: #1a5f3f; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,95,63,0.12); }
-    .tool-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .tool-icon  { font-size: 3rem; margin-bottom: 1rem; }
     .tool-title { font-size: 1.2rem; font-weight: 700; color: #1a5f3f; margin-bottom: 0.5rem; }
     .tool-desc  { font-size: 0.88rem; color: #666; line-height: 1.6; }
     .badge { display:inline-block; background:#e8f5ee; color:#1a5f3f; border-radius:20px;
@@ -39,10 +39,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("### 🛠️ Tools")
-st.caption("Sidebar se tool select karein ya neeche click karein")
+st.markdown("### 🛠️ Available Tools")
 
-c1, c2 = st.columns(2)
+c1, c2, c3 = st.columns(3)
 
 with c1:
     st.markdown("""
@@ -51,16 +50,16 @@ with c1:
         <div class="tool-title">Invoice Generator</div>
         <div class="tool-desc">
             Professional Pakistani invoices banayein. FBR-compliant GST calculation,
-            WHT deduction, NTN/STRN fields, aur PDF/HTML download.
+            WHT deduction, NTN/STRN fields, aur HTML/PDF download.
         </div>
         <div>
             <span class="badge">FBR GST 2024</span>
-            <span class="badge">WHT Calculator</span>
+            <span class="badge">WHT</span>
             <span class="badge">PDF Export</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.page_link("pages/1_Invoice_Generator.py", label="Invoice Generator kholein →", use_container_width=True)
+    st.page_link("pages/1_Invoice_Generator.py", label="Open Invoice Generator →", use_container_width=True)
 
 with c2:
     st.markdown("""
@@ -74,11 +73,29 @@ with c2:
         <div>
             <span class="badge">2024-25 Slabs</span>
             <span class="badge">Deductions</span>
-            <span class="badge">Visual Charts</span>
+            <span class="badge">Charts</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
-    st.page_link("pages/2_Income_Tax_Calculator.py", label="Tax Calculator kholein →", use_container_width=True)
+    st.page_link("pages/2_Income_Tax_Calculator.py", label="Open Tax Calculator →", use_container_width=True)
+
+with c3:
+    st.markdown("""
+    <div class="tool-card">
+        <div class="tool-icon">📊</div>
+        <div class="tool-title">Excel & PDF Tools</div>
+        <div class="tool-desc">
+            Excel se invoice banao. Invoice ko Excel/CSV export karo.
+            PDF upload karo aur text/amounts extract karo — sab ek jagah.
+        </div>
+        <div>
+            <span class="badge">Excel Import</span>
+            <span class="badge">Excel Export</span>
+            <span class="badge">PDF Extract</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    st.page_link("pages/3_Excel_PDF_Tools.py", label="Open Excel & PDF Tools →", use_container_width=True)
 
 st.divider()
 st.markdown("""
